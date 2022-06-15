@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "gusztavvargadr/ubuntu-desktop"
+
+  config.vm.communicator = :ssh
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  config.vm.provider "hyperv" do |hv|
+    hv.vmname = "sample"
+    hv.cpus = 2
+    hv.memory = 4096
+  end
+  
+  # Install development tools
+  $script = <<-'SCRIPT'
+    apt-get update
+    snap install docker
+    snap install --classic terraform
+    snap install --classic code
+    curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+  SCRIPT
+
+  config.vm.provision :shell, inline: $script, privileged: true
+
+end

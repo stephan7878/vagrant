@@ -43,3 +43,9 @@ vagrant destroy -f
 ```
 
 For more information, check out the official [Vagrant Documentation](https://www.vagrantup.com/docs).
+
+# Templates
+
+## ubuntu-desktop
+
+Vagrantfile for an Ubuntu Desktop development environment with Docker, Terraform, Visual Studio Code and the IBM Cloud CLI installed.
