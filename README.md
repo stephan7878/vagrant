@@ -46,6 +46,12 @@ For more information, check out the official [Vagrant Documentation](https://www
 
 # Templates
 
+## centos-ansible-cluster
+
+Vagrantfile for a 3-node CentOS Stream 8 Linux environment. The primary node, `ansible-1`, has both ansible and ansible-navigator installed and SSH access configured to the other 2 nodes.
+
+
+
 ## ubuntu-desktop
 
 Vagrantfile for an Ubuntu Desktop development environment with Docker, Terraform, Visual Studio Code and the IBM Cloud CLI installed.
